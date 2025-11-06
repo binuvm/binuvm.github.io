@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aviyal — binuvm</title>
+  <meta name="description" content="Personal site for binuvm / Aviyal" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#">Aviyal</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container">
+        <h1>Hello — I'm binuvm</h1>
+        <p class="lead">I build things on the web. This is a minimal starter site you can expand.</p>
+        <p><a class="btn" href="#projects">View projects</a></p>
+      </div>
+    </section>
+
+    <section id="about" class="container section">
+      <h2>About</h2>
+      <p>Short intro — add your bio here. Example: I'm a developer interested in web performance, accessibility, and design systems.</p>
+      <ul>
+        <li>Location: (your city)</li>
+        <li>Work: (your role / company)</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="container section">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Project One</h3>
+          <p>Short description of project one. Link to repo or demo when available.</p>
+          <p><a href="#" class="link">Details</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Project Two</h3>
+          <p>Short description of project two.</p>
+          <p><a href="#" class="link">Details</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="container section">
+      <h2>Contact</h2>
+      <p>If you'd like to get in touch, email <a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a> or fill the form below.</p>
+
+      <form class="contact-form" onsubmit="handleContact(event)">
+        <label>
+          Name
+          <input name="name" type="text" required />
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+        <div>
+          <button type="submit" class="btn">Send</button>
+        </div>
+        <div id="contact-status" role="status" aria-live="polite" class="status"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Aviyal — binuvm</small>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#home">Top</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Small client-side helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function handleContact(e) {
+      e.preventDefault();
+      const form = e.currentTarget;
+      const name = form.name.value.trim();
+      const message = form.message.value.trim();
+
+      // Simple local confirmation; replace with your backend or form provider later
+      const status = document.getElementById('contact-status');
+      if (!name || !message) {
+        status.textContent = 'Please add your name and a message.';
+        status.style.color = 'var(--accent)';
+        return;
+      }
+
+      status.textContent = 'Thanks — your message has been received (locally).';
+      status.style.color = 'var(--muted)';
+
+      // Optionally open user's email client with content filled in
+      // Comment out if you don't want this behavior.
+      const subject = encodeURIComponent('Contact from ' + name);
+      const body = encodeURIComponent(message + "\n\nFrom: " + name);
+      window.location.href = `mailto:hello@yourdomain.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
