@@ -1,119 +1,263 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Aviyal — binuvm</title>
-  <meta name="description" content="Personal site for binuvm / Aviyal" />
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="#">Aviyal</a>
-      <nav aria-label="Main navigation">
-        <ul class="nav">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section id="home" class="hero">
-      <div class="container">
-        <h1>Hello — I'm binuvm</h1>
-        <p class="lead">I build things on the web. This is a minimal starter site you can expand.</p>
-        <p><a class="btn" href="#projects">View projects</a></p>
-      </div>
-    </section>
-
-    <section id="about" class="container section">
-      <h2>About</h2>
-      <p>Short intro — add your bio here. Example: I'm a developer interested in web performance, accessibility, and design systems.</p>
-      <ul>
-        <li>Location: (your city)</li>
-        <li>Work: (your role / company)</li>
-      </ul>
-    </section>
-
-    <section id="projects" class="container section">
-      <h2>Projects</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Project One</h3>
-          <p>Short description of project one. Link to repo or demo when available.</p>
-          <p><a href="#" class="link">Details</a></p>
-        </article>
-
-        <article class="card">
-          <h3>Project Two</h3>
-          <p>Short description of project two.</p>
-          <p><a href="#" class="link">Details</a></p>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact" class="container section">
-      <h2>Contact</h2>
-      <p>If you'd like to get in touch, email <a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a> or fill the form below.</p>
-
-      <form class="contact-form" onsubmit="handleContact(event)">
-        <label>
-          Name
-          <input name="name" type="text" required />
-        </label>
-        <label>
-          Message
-          <textarea name="message" rows="5" required></textarea>
-        </label>
-        <div>
-          <button type="submit" class="btn">Send</button>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <h1><i class="fas fa-book-open"></i> Documentation Hub</h1>
+            </div>
+            <nav class="nav-menu">
+                <a href="#tutorials" class="nav-link">Tutorials</a>
+                <a href="#guides" class="nav-link">Guides</a>
+                <a href="#references" class="nav-link">References</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn-secondary">Log in</button>
+                <button class="btn-primary">Sign up</button>
+            </div>
         </div>
-        <div id="contact-status" role="status" aria-live="polite" class="status"></div>
-      </form>
-    </section>
-  </main>
+    </header>
 
-  <footer class="site-footer">
-    <div class="container">
-      <small>© <span id="year"></span> Aviyal — binuvm</small>
-      <nav class="footer-nav" aria-label="Footer">
-        <a href="#home">Top</a>
-      </nav>
-    </div>
-  </footer>
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1 class="hero-title">Documentation & Tutorials</h1>
+                <p class="hero-subtitle">Follow along with comprehensive guides and tutorials for your development journey.</p>
+                
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" placeholder="Search tutorials, guides, and documentation..." class="search-input">
+                        <button class="search-btn">Search</button>
+                    </div>
+                    <p class="search-help">To add a tag to the search, type the tag with [ ] around it.</p>
+                </div>
 
-  <script>
-    // Small client-side helpers
-    document.getElementById('year').textContent = new Date().getFullYear();
+                <!-- Popular Topics -->
+                <div class="popular-topics">
+                    <span class="topics-label">Popular Topics:</span>
+                    <div class="topic-tags">
+                        <span class="topic-tag">JavaScript</span>
+                        <span class="topic-tag">Python</span>
+                        <span class="topic-tag">Docker</span>
+                        <span class="topic-tag">AWS</span>
+                        <span class="topic-tag">React</span>
+                        <span class="topic-tag">Node.js</span>
+                    </div>
+                </div>
+            </section>
 
-    function handleContact(e) {
-      e.preventDefault();
-      const form = e.currentTarget;
-      const name = form.name.value.trim();
-      const message = form.message.value.trim();
+            <!-- Featured Content -->
+            <section class="featured-section">
+                <h2 class="section-title">Featured Content</h2>
+                <div class="featured-grid">
+                    <article class="featured-card">
+                        <div class="card-image">
+                            <img src="https://via.placeholder.com/640x360/0080ff/ffffff?text=Featured+Tutorial" alt="Featured Tutorial">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-type">Tutorial</span>
+                            <h3 class="card-title">Getting Started with Modern Web Development</h3>
+                            <p class="card-date">November 7, 2025</p>
+                            <a href="#" class="card-link">View Tutorial</a>
+                        </div>
+                    </article>
 
-      // Simple local confirmation; replace with your backend or form provider later
-      const status = document.getElementById('contact-status');
-      if (!name || !message) {
-        status.textContent = 'Please add your name and a message.';
-        status.style.color = 'var(--accent)';
-        return;
-      }
+                    <article class="featured-card">
+                        <div class="card-image">
+                            <img src="https://via.placeholder.com/640x360/00c851/ffffff?text=Best+Practices" alt="Best Practices">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-type">Guide</span>
+                            <h3 class="card-title">API Design Best Practices and Standards</h3>
+                            <p class="card-date">November 6, 2025</p>
+                            <a href="#" class="card-link">View Guide</a>
+                        </div>
+                    </article>
 
-      status.textContent = 'Thanks — your message has been received (locally).';
-      status.style.color = 'var(--muted)';
+                    <article class="featured-card">
+                        <div class="card-image">
+                            <img src="https://via.placeholder.com/640x360/ff6b35/ffffff?text=Deep+Dive" alt="Deep Dive">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-type">Conceptual Article</span>
+                            <h3 class="card-title">Understanding Cloud Architecture Patterns</h3>
+                            <p class="card-date">November 5, 2025</p>
+                            <a href="#" class="card-link">View Article</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
 
-      // Optionally open user's email client with content filled in
-      // Comment out if you don't want this behavior.
-      const subject = encodeURIComponent('Contact from ' + name);
-      const body = encodeURIComponent(message + "\n\nFrom: " + name);
-      window.location.href = `mailto:hello@yourdomain.com?subject=${subject}&body=${body}`;
-    }
-  </script>
+            <!-- Results Section -->
+            <section class="results-section">
+                <div class="results-header">
+                    <h2 class="section-title">Recent Tutorials</h2>
+                    <div class="filters">
+                        <button class="filter-btn active">All</button>
+                        <button class="filter-btn">Tutorials</button>
+                        <button class="filter-btn">Guides</button>
+                        <button class="filter-btn">References</button>
+                    </div>
+                </div>
+
+                <div class="results-grid">
+                    <article class="result-card">
+                        <div class="result-content">
+                            <span class="result-type">Tutorial</span>
+                            <h3 class="result-title">How to Build a REST API with Node.js and Express</h3>
+                            <p class="result-date">November 7, 2025</p>
+                            <a href="#" class="result-link">View Tutorial</a>
+                        </div>
+                    </article>
+
+                    <article class="result-card">
+                        <div class="result-content">
+                            <span class="result-type">Guide</span>
+                            <h3 class="result-title">Complete Guide to Git Version Control</h3>
+                            <p class="result-date">November 6, 2025</p>
+                            <a href="#" class="result-link">View Guide</a>
+                        </div>
+                    </article>
+
+                    <article class="result-card">
+                        <div class="result-content">
+                            <span class="result-type">Tutorial</span>
+                            <h3 class="result-title">Setting Up a Development Environment with Docker</h3>
+                            <p class="result-date">November 6, 2025</p>
+                            <a href="#" class="result-link">View Tutorial</a>
+                        </div>
+                    </article>
+
+                    <article class="result-card">
+                        <div class="result-content">
+                            <span class="result-type">Reference</span>
+                            <h3 class="result-title">JavaScript ES6+ Features Reference</h3>
+                            <p class="result-date">November 5, 2025</p>
+                            <a href="#" class="result-link">View Reference</a>
+                        </div>
+                    </article>
+
+                    <article class="result-card">
+                        <div class="result-content">
+                            <span class="result-type">Tutorial</span>
+                            <h3 class="result-title">Deploy Applications with CI/CD Pipelines</h3>
+                            <p class="result-date">November 5, 2025</p>
+                            <a href="#" class="result-link">View Tutorial</a>
+                        </div>
+                    </article>
+
+                    <article class="result-card">
+                        <div class="result-content">
+                            <span class="result-type">Guide</span>
+                            <h3 class="result-title">Database Design Principles and Best Practices</h3>
+                            <p class="result-date">November 4, 2025</p>
+                            <a href="#" class="result-link">View Guide</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="page-btn" disabled>Previous</button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <span class="page-dots">...</span>
+                    <button class="page-btn">15</button>
+                    <button class="page-btn">Next</button>
+                </div>
+            </section>
+
+            <!-- Call to Action Sections -->
+            <section class="cta-sections">
+                <div class="cta-grid">
+                    <div class="cta-card">
+                        <h3>Become a contributor</h3>
+                        <p>Get paid to write technical tutorials and select a tech-focused charity to receive a matching donation.</p>
+                        <a href="#" class="cta-link">Sign Up</a>
+                    </div>
+
+                    <div class="cta-card">
+                        <h3>Complete Documentation</h3>
+                        <p>Full documentation for every feature and functionality in our platform.</p>
+                        <a href="#" class="cta-link">Learn more</a>
+                    </div>
+
+                    <div class="cta-card">
+                        <h3>Resources for developers</h3>
+                        <p>Everything you need to know about building modern applications and best practices.</p>
+                        <a href="#" class="cta-link">Learn more</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Community Tutorials</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Q&A</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">System Status</a></li>
+                        <li><a href="#">Report Issue</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Documentation Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
